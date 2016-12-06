@@ -1,4 +1,4 @@
-FROM huliangyu/ui/hplus:latest
+FROM base-tomcat-maven:latest
 
 ADD pom.xml /tmp/build/
 RUN cd /tmp/build && mvn -q dependency:resolve
