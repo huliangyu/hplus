@@ -4,7 +4,7 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://76e4ad33.m.daocloud.io
+RUN curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://76e4ad33.m.daocloud.io
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	05AB33110949707C93A279E3D3EFE6B686867BA6 \
 	07E48665A34DCAFAE522E5E6266191C37C037D42 \
