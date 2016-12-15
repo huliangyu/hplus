@@ -4,7 +4,7 @@ ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
-
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://76e4ad33.m.daocloud.io
 RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	05AB33110949707C93A279E3D3EFE6B686867BA6 \
 	07E48665A34DCAFAE522E5E6266191C37C037D42 \
@@ -19,7 +19,7 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-keys \
 	F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE \
 	F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
 	
-ENV TOMCAT_VERSION 8.0.36
+ENV TOMCAT_VERSION 8.0.39
 ENV TOMCAT_TGZ_URL https://www.apache.org/dist/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz
 
 RUN set -x \
